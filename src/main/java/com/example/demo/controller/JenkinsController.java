@@ -8,6 +8,7 @@ public class JenkinsController {
 	
 	@GetMapping("/get")
 	public String getMessage() {
+		System.out.println("hello");
 		return "Wel come to first jenkins";
 	}
 
