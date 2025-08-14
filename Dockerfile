@@ -1,4 +1,7 @@
 FROM openjdk:17
 EXPOSE 8080
-ADD target/devops-integration.jar devops-integration.jar
-ENTRYPOINT ["java","-jar","/devops-integration.jar"]
+
+# Fail fast if JAR doesn't exist
+COPY target/*.jar devops-integration.jar
+
+ENTRYPOINT ["java", "-jar", "devops-integration.jar"]
